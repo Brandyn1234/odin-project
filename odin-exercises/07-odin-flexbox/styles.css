@@ -1,0 +1,19 @@
+.bg-color {
+    background-color: #bd3c30;
+}
+
+.container {
+    background-color: #00727d;
+    border: 2px solid #003840;
+    display: flex;
+    text-align: center;
+}
+
+.container > div {
+    flex: 1;
+}
+
+.container > .search {
+    background-color: #3ec2cd;
+    flex: 2;
+}
