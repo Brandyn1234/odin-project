@@ -41,8 +41,21 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+function game() {
+    let numOfRounds = 5;
+    let playing = true;
+    while (playing) {
+    let playerChoice = prompt("Rock, paper, or scissors?");
+    let playerLowerCase = playerChoice.toLowerCase();
+    let computerChoice = getComputerChoice();
+    console.log(playRound(playerLowerCase, computerChoice));
+    numOfRounds--;
+    if (numOfRounds === 0){
+        playing = false;
+    }
+    }
+}
+
 const options = ["rock", "paper", "scissors"];
-let playerChoice = prompt("Rock, paper, or scissors?");
-let playerLowerCase = playerChoice.toLowerCase();
-let computerChoice = getComputerChoice();
-console.log(playRound(playerLowerCase, computerChoice));
+console.log(game());
+
