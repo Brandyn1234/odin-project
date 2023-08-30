@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-color {
+    background-color: #fbf236; 
+}
+
+.header {
+    background-color: #0f1130;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 25px;
+}
+
+.image-hover:hover {
+    -ms-transform: scale(1.25); /* IE 9 */
+    -webkit-transform: scale(1.25); /* Safari 3-8 */
+    transform: scale(1.25); 
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 75px;
+}
