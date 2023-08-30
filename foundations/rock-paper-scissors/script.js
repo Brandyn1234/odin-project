@@ -1,61 +1,46 @@
-function getComputerChoice() {
-    let computerChoice = options[(Math.floor(Math.random() * options.length))];
-    return computerChoice;
-}
+function Game() {
 
-function playRound(playerChoice, computerChoice) {
-    if (playerChoice === "rock") {
-        if (computerChoice === "rock") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nDraw! Try Again!`);
+    const img = document.querySelectorAll('.image-container');
+    img.forEach(imgs => {
+    imgs.addEventListener('click', (e)=>{
+    let playerchoice = e.target.id;
+    /*console.log(playerchoice);*/
+
+
+    getComputerChoice = () => {
+        const options = ["rock", "paper", "scissors"];
+        let computerChoice = options[(Math.floor(Math.random() * options.length))];
+        return computerChoice;
+    }
+
+    let computerchoice = getComputerChoice();
+
+    console.log(computerchoice);
+
+    if (playerchoice === "rock") {
+        if (computerchoice === "rock") {
+            console.log("It's a Tie!");
         }
-        else if (computerChoice === "paper") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nYou Lose! Try Again!`);
+
+        else if (computerchoice === "paper") {
+            console.log("You Lose!");
         }
-        else if (computerChoice === "scissors") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nYou Win!`);
+
+        else if (computerchoice === "scissors") {
+            console.log("You Win!");
         }
     }
     
-    if (playerChoice === "paper") {
-        if (computerChoice === "rock") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nYou Win!`);
-        }
-        else if (computerChoice === "paper") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nDraw! Try Again!`);
-        }
-        else if (computerChoice === "scissors") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nYou Lose! Try Again!`);
-        }
+    if (playerchoice === "paper") {
+        /* To-do placeholder text*/ 
     }
 
-    if (playerChoice === "scissors") {
-        if (computerChoice === "rock") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nYou Lose! Try Again!`);
-        }
-        else if (computerChoice === "paper") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nYou Win!`);
-        }
-        else if (computerChoice === "scissors") {
-            return (`You: ${playerChoice}\nComputer: ${computerChoice}\nDraw! Try Again!`);
-        }
+    if (playerchoice === "scissors") {
+        /* to-do placeholder text */
     }
+
+    });  
+    });
 }
 
-function game() {
-    let numOfRounds = 5;
-    let playing = true;
-    while (playing) {
-    let playerChoice = prompt("Rock, paper, or scissors?");
-    let playerLowerCase = playerChoice.toLowerCase();
-    let computerChoice = getComputerChoice();
-    console.log(playRound(playerLowerCase, computerChoice));
-    numOfRounds--;
-    if (numOfRounds === 0){
-        playing = false;
-    }
-    }
-}
-
-const options = ["rock", "paper", "scissors"];
-console.log(game());
-
+Game();

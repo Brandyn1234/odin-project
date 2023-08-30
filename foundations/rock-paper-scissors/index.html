@@ -4,8 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="script.js" defer></script>
     </head>
-    <body>
-        <script src="script.js"></script>
+    <body class="bg-color">
+        <div class="header">
+            <img src="./images/header-logo.png" alt="title" height="128"/>
+        </div>
+        <div class="image-container">
+            <img id="rock" class="image-hover" src="./images/rock.png" alt="Rock" width="128"/>
+            <img id="paper" class="image-hover" src="./images/paper.png" alt="Paper" width="128"/>
+            <img id="scissors" class="image-hover" src="./images/scissors.png" alt="Scissors" width="128"/>
+        </div>
+        <div class="score-container">
+            <div>Player Score:</div>
+            <div>Computer Score:</div>
+        </div>
     </body>
 </html>
