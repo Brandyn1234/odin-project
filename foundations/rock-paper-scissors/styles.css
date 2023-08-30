@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding-top: 25px;
+    padding-top: 125px;
 }
 
 .image-hover:hover {
@@ -33,4 +33,10 @@
     justify-content: center;
     padding-top: 50px;
     gap: 75px;
+}
+
+footer {
+    margin-top: 400px;
+    text-align: center;
+    font-weight: bold;
 }
