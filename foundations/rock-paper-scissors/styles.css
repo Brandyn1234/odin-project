@@ -6,12 +6,12 @@
 }
 
 .bg-color {
-    background-color: #fbf236; 
+    background-color: #EEF4ED;/*#fbf236; */
     font-family: Silkscreen;
 }
 
 .header {
-    background-color: #0f1130;
+    background-color: #8DA9C4;/*#0f1130;*/
     display: flex;
     justify-content: center;
     padding-top: 30px;
