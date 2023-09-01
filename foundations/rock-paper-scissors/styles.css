@@ -44,6 +44,7 @@
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    height: 50px;
 }
 
 footer {
@@ -71,10 +72,17 @@ footer {
 
     .score-container {
         font-size: 24px;
+        gap: 25px;
     }
     
     .results-container {
-        font-size: 24px;
+        font-size: 22px;
+        padding: 20px;
+    
+    }
+
+    footer {
+        margin-top: 125px;
     }
 
 }
