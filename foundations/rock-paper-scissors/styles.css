@@ -58,15 +58,7 @@ footer {
         height: 64px;
     }
 
-    #rock {
-        width: 64px;
-    }
-
-    #paper {
-        width: 64px;
-    }
-
-    #scissors {
+    #rock, #paper, #scissors {
         width: 64px;
     }
 

@@ -1,13 +1,11 @@
 function Game() {
 
-    // player score  //
     let playerscore = 0;
     const playercontainer = document.querySelector('.player-score');
     const span = document.createElement('span');
     span.textContent = playerscore;
     playercontainer.appendChild(span);
 
-    // computer score //
     let computerscore = 0;
     const computercontainer = document.querySelector('.computer-score');
     const cpuspan = document.createElement('span');
@@ -26,6 +24,13 @@ function Game() {
             return computerChoice;
         }
     
+        resetScore = () => {
+            playerscore = 0;
+            span.textContent = playerscore;
+            computerscore = 0;
+            cpuspan.textContent = computerscore;
+        }
+
         let computerchoice = getComputerChoice();
         
         // Game Logic //
@@ -81,20 +86,13 @@ function Game() {
 
         if (playerscore >= 5) {
             document.getElementById("demo").textContent = "You win! Play Again?";
-            playerscore = 0;
-            span.textContent = playerscore;
-            computerscore = 0;
-            cpuspan.textContent = computerscore;
+            resetScore();
         }
 
         if (computerscore >= 5) {
             document.getElementById("demo").textContent = "You lose! Play Again?";
-            playerscore = 0;
-            span.textContent = playerscore;
-            computerscore = 0;
-            cpuspan.textContent = computerscore;
+            resetScore();
         }
-        
         
         });  
         });
