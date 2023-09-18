@@ -44,12 +44,18 @@
     justify-content: center;
     padding-top: 50px;
     height: 50px;
+    text-align: center;
 }
 
 footer {
-    margin-top: 265px;
-    text-align: center;
     font-weight: bold;
+    position: absolute;
+    bottom: 2%;
+}
+
+.footer-container {
+    display:flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 700px) {
@@ -67,13 +73,53 @@ footer {
     }
     
     .results-container {
-        font-size: 22px;
+        font-size: 16px;
         padding: 20px;
-    
-    }
-
-    footer {
-        margin-top: 125px;
     }
 
 }
+
+@media screen and (max-width: 330px) {
+    .img-header {
+        height: 48px;
+    }
+
+    #rock, #paper, #scissors {
+        width: 48px;
+    }
+
+    .score-container {
+        font-size: 16px;
+        gap: 16px;
+    }
+
+    .results-container {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #rock, #paper, #scissors {
+        width: 96px;
+    }
+
+    .image-container{
+        padding-top: 75px;
+    }
+
+    .score-container {
+        font-size: 24px;
+    }
+
+    .results-container {
+        font-size: 22px;
+        padding-top: 25px;
+    }
+}
+
+
