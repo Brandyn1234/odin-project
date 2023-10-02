@@ -3,8 +3,6 @@ let slider = document.getElementById("range");
 let output = document.getElementById("value");
 let size = slider.value;
 
-createBoard(size);
-
 function createBoard(size) {
 
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -21,12 +19,21 @@ function createBoard(size) {
     };    
 };
 
+function getBoardSize() {
+    slider.addEventListener('input', function(event) {
+        output.textContent = slider.value;
+    });
+    slider.addEventListener('change', function(event){
+        resetBoard();
+        createBoard(slider.value);
+    })
+};
+
 function resetBoard() {
 };
 
-slider.addEventListener('input', function(event) {
-    output.textContent = slider.value;
-});
+getBoardSize();
+
 
 
 
