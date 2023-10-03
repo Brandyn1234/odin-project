@@ -13,7 +13,7 @@ function createBoard(size) {
     for (let i = 0; i < amount; i++) {
         let div = document.createElement('div');
         div.addEventListener('mouseover', function(event) {
-            div.style.backgroundColor = 'black';
+            div.style.backgroundColor = '#000000';
         });
         board.appendChild(div);
     };    
