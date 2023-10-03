@@ -1,5 +1,5 @@
 body {
-    background: #65D972;/*#4D8AAE;*/
+    background: #65D972;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,4 +28,15 @@ body {
     width: 500px;
     height: 500px;
     border: 12px solid #29A337;
+}
+
+@media screen and (max-width: 525px) {
+    .board {
+        width: 340px;
+        height: 340px; 
+    }
+
+    .footer {
+        width: 340px;
+    }
 }
