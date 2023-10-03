@@ -1,6 +1,6 @@
-let board = document.querySelector('.board');
-let slider = document.getElementById("range");
-let output = document.getElementById("value");
+const board = document.querySelector('.board');
+const slider = document.getElementById("range");
+const output = document.getElementById("value");
 let size = slider.value;
 
 function createBoard(size) {
@@ -30,8 +30,12 @@ function getBoardSize() {
 };
 
 function resetBoard() {
+    while (board.firstChild) {
+        board.removeChild(board.lastChild);
+    }
 };
 
+createBoard(slider.value);
 getBoardSize();
 
 
