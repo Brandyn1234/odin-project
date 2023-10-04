@@ -4,5 +4,5 @@ This repository is all of the projects and exercises I've completed with The Odi
 https://www.theodinproject.com/
 
 ## Rock Paper Scissors 
-*First project I've made with using HTML/CSS/Javascript 
+*First project I've made with HTML/CSS/Javascript 
 [click here](https://brandyn1234.github.io/odin-project/foundations/rock-paper-scissors/) :point_left:
