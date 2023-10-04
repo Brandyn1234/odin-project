@@ -6,3 +6,4 @@ https://www.theodinproject.com/
 ## Rock Paper Scissors 
 First project I've made with HTML/CSS/Javascript 
 [click here](https://brandyn1234.github.io/odin-project/foundations/rock-paper-scissors/) :point_left:
+ ** What I learned from completing this project: **
