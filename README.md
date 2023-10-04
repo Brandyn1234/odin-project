@@ -8,6 +8,6 @@ First project I've made with HTML/CSS/Javascript
 [click here](https://brandyn1234.github.io/odin-project/foundations/rock-paper-scissors/) :point_left:
 ### What I learned from completing this project:
 * Gained a better understanding of functions in Javascript.
-* Learned basic DOM manipulation techniques to improve the UI (adding/updating score, displaying text based on win/lose condition).
+* Learned basic DOM manipulation techniques to improve the UI (adding/updating score, displaying text based on win/lose condition, listening for events).
 * Linking external javascript files and using defer attribute to place script tag in head of html.
 * Basics of css media queries (first attempt at making responsive design).
