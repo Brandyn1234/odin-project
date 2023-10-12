@@ -1,7 +1,8 @@
 const board = document.querySelector('.board');
-const slider = document.getElementById("range");
-const output = document.getElementById("value");
-let size = slider.value;
+const slider = document.getElementById('range');
+const output = document.getElementById('value');
+const randColor = document.getElementById('random-color')
+let DIV_BG_COLOR = '#000000';
 
 function createBoard(size) {
 
@@ -13,7 +14,7 @@ function createBoard(size) {
     for (let i = 0; i < amount; i++) {
         let div = document.createElement('div');
         div.addEventListener('mouseover', function(event) {
-            div.style.backgroundColor = '#000000';
+            div.style.backgroundColor = DIV_BG_COLOR;
         });
         board.appendChild(div);
     };    
@@ -35,9 +36,21 @@ function resetBoard() {
     }
 };
 
+function getRandomColor() {
+    const colors = ['yellow', 'red', 'blue', 'green', 'brown', 'pink', 'orange', 'purple'];
+    randColor.addEventListener('click', function(event){
+        const random = Math.floor(Math.random() * colors.length);
+        DIV_BG_COLOR = colors[random];
+    });
+};
+
+function getDefaultColor() {
+    // code here //
+};
+
 createBoard(slider.value);
 getBoardSize();
-
+getRandomColor();
 
 
 
