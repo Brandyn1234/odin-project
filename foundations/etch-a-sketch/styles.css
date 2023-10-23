@@ -6,7 +6,8 @@ html, body {
 }
 
 body {
-    background: #65D972;
+    color: #F5F5F5; 
+    background: #363062;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,8 +25,9 @@ body {
 .footer {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     width: 500px;
-    gap: 40px;
+    gap: 30px;
     margin-top: 20px;
 }
 
@@ -34,7 +36,22 @@ body {
     display: grid;
     width: 500px;
     height: 500px;
-    border: 12px solid #29A337;
+    border: 8px solid #5f4193;
+}
+
+.button {
+    background-color: #4D4C7D;
+    color: #f5f5f5;
+    border-radius: 8px;
+    border: 2px solid #f5f5f5;
+    width: 100px;
+    height: 25px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #7170ba;
 }
 
 @media screen and (max-width: 525px) {
