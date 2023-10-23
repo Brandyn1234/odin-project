@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.calc-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-display {
+    background-color: #4D4D4F;
+    border-radius: 12px;
+    width: 400px;
+    height: 500px;
+}
