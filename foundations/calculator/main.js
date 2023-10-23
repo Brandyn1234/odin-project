@@ -1,3 +1,7 @@
+let firstOperand = '';
+let secondOperand = '';
+let operator = '';
+
 function add(a, b){
     return a + b;
 };
@@ -13,4 +17,23 @@ function multiply(a, b){
 function divide(a, b){
     return a / b;
 };
+
+function operate(operator, a, b){
+    a = Number(a);
+    b = Number(b);
+    switch (operator){
+        case '+':
+            return add(a, b);
+        case '-':
+            return subtract(a, b);
+        case '*':
+            return multiply(a, b);
+        case '/':
+            return divide(a, b);
+    };
+};
+
+let result = operate('/', 16, 4);
+console.log(result);
+
 
