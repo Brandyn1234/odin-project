@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -20,12 +22,24 @@ body {
 }
 
 .screen-display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     background-color: white;
     width: 360px;
     height: 75px;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 12px;
+    border: 2px solid black;
+}
+
+#screen-data {
+    display: flex;
+    margin-right: 20px;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    gap:10px;
 }
 
 .button-grid {
@@ -45,6 +59,8 @@ body {
 button {
     border-radius: 12px;
     cursor: pointer;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
