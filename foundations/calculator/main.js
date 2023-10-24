@@ -11,16 +11,27 @@ numberButtons.forEach(button => {
         if (screenData.innerText === '0') {
             screenData.textContent = '';
         };
+        appendNumber(button.textContent);
         screenData.textContent += button.textContent
     });
 });
 
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
+        clear();
         operator = button.textContent;
         screenData.textContent += button.textContent
     });
 });
+
+function appendNumber(number) {
+    firstOperand += number;
+};
+
+function clear() {
+    firstOperand = '';
+    secondOperand = '';
+};
 
 function add(a, b){
     return a + b;
@@ -38,7 +49,7 @@ function divide(a, b){
     return a / b;
 };
 
-function operate(operator, a, b){
+function calculate(operator, a, b){
     a = Number(a);
     b = Number(b);
     switch (operator){
