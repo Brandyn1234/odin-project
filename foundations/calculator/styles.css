@@ -23,8 +23,9 @@ body {
 
 .screen-display {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-end;
     background-color: white;
     width: 360px;
     height: 75px;
@@ -35,11 +36,15 @@ body {
 }
 
 #screen-data {
-    display: flex;
     margin-right: 20px;
     font-size: 36px;
     font-family: 'Roboto', sans-serif;
     gap:10px;
+    border: 2px solid black;
+}
+
+#prev-screen-data {
+    margin-right: 20px;
 }
 
 .button-grid {

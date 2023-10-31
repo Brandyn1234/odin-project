@@ -1,36 +1,26 @@
 let firstOperand = '';
+let prevFirstOperand = '';
 let secondOperand = '';
+let prevSecondOperand = '';
+let onFirstOperand = true;
 let operator = '';
 
 const screenData = document.getElementById('screen-data');
+const prevScreenData = document.getElementById('prev-screen-data');
 const numberButtons = document.querySelectorAll('.numbers');
 const operationButtons = document.querySelectorAll('.operations'); 
+const equalsButton = document.querySelector('.equals');
 
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        if (screenData.innerText === '0') {
-            screenData.textContent = '';
-        };
-        appendNumber(button.textContent);
-        screenData.textContent += button.textContent
-    });
-});
-
-operationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        clear();
-        operator = button.textContent;
-        screenData.textContent += button.textContent
-    });
-});
-
-function appendNumber(number) {
-    firstOperand += number;
+function appendNumber(number, onFirstOperand) {
+    if (onFirstOperand) {
+        firstOperand += number;
+    } else {
+        secondOperand += number
+    }
 };
 
 function clear() {
-    firstOperand = '';
-    secondOperand = '';
+    // code here //
 };
 
 function add(a, b){
@@ -64,6 +54,36 @@ function calculate(operator, a, b){
     };
 };
 
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (screenData.innerText === '0') {
+            screenData.textContent = '';
+        };
+        appendNumber(button.textContent, onFirstOperand);
+        screenData.textContent += button.textContent;
+        console.log(firstOperand);
+        console.log(secondOperand);
+        //console.log(prevFirstOperand);//
+    });
+});
 
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (onFirstOperand) {
+            onFirstOperand = false;
+            prevFirstOperand = firstOperand;
+        };
+        operator = button.textContent;
+        screenData.textContent += button.textContent;
+    });
+});
+
+equalsButton.addEventListener('click', () => {
+    let total = calculate(operator, firstOperand, secondOperand);
+    console.log(total);
+    prevScreenData.textContent = screenData.textContent;
+    screenData.textContent = '';
+    screenData.textContent += total;
+});
 
 
