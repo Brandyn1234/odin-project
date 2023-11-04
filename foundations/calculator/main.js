@@ -8,7 +8,8 @@ const prevScreenData = document.getElementById('prev-screen-data');
 const numberButtons = document.querySelectorAll('.numbers');
 const operationButtons = document.querySelectorAll('.operations'); 
 const equalsButton = document.querySelector('.equals');
-const decimalButton = document.querySelector('.decimal')
+const decimalButton = document.querySelector('.decimal');
+const clearButton = document.querySelector('.clear');
 
 function appendNumber(number, onFirstOperand) {
     if (onFirstOperand) {
@@ -18,6 +19,14 @@ function appendNumber(number, onFirstOperand) {
     }
 };
 
+function allClear() {
+    firstOperand = '';
+    secondOperand = '';
+    operator = '';
+    screenData.textContent = 0;
+    prevScreenData.textContent = '';
+};
+   
 function add(a, b){
     return a + b;
 };
@@ -95,6 +104,17 @@ equalsButton.addEventListener('click', () => {
     screenData.textContent = '';
     screenData.textContent += total;
 });
+
+decimalButton.addEventListener('click', () => {
+    // code here //
+});
+
+
+clearButton.addEventListener('click', () => {
+    allClear();
+});
+
+
 
 // Why does multiplication and divison not work? //
 // multiplication is setting total to 0 somehow //
