@@ -20,6 +20,7 @@ function appendNumber(number, onFirstOperand) {
 };
 
 function allClear() {
+    onFirstOperand = true;
     firstOperand = '';
     secondOperand = '';
     operator = '';
@@ -67,6 +68,8 @@ numberButtons.forEach(button => {
 
         appendNumber(button.textContent, onFirstOperand);
         screenData.textContent += button.textContent;
+        console.log(firstOperand);
+        console.log(secondOperand);
     });
 });
 
@@ -112,8 +115,9 @@ decimalButton.addEventListener('click', () => {
 
 clearButton.addEventListener('click', () => {
     allClear();
+    console.log(firstOperand);
+    console.log(secondOperand);
 });
-
 
 
 // Why does multiplication and divison not work? //
