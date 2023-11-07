@@ -45,6 +45,16 @@ function divide(a, b){
     return a / b;
 };
 
+function evaluate() {
+    let total = calculate(operator, firstOperand, secondOperand);
+    firstOperand = total;
+    secondOperand = '';
+    operator = '';
+    prevScreenData.textContent = screenData.textContent;
+    screenData.textContent = '';
+    screenData.textContent += total;
+};
+
 function calculate(operator, a, b){
     a = Number(a);
     b = Number(b);
@@ -78,13 +88,7 @@ operationButtons.forEach(button => {
     button.addEventListener('click', () => {
 
         if (operator.length >= 1) {
-            let total = calculate(operator, firstOperand, secondOperand);
-            firstOperand = total;
-            secondOperand = '';
-            operator = '';
-            prevScreenData.textContent = screenData.textContent;
-            screenData.textContent = '';
-            screenData.textContent += total;
+            evaluate();
         };
 
         if (onFirstOperand) {
@@ -100,17 +104,16 @@ operationButtons.forEach(button => {
 });
 
 equalsButton.addEventListener('click', () => {
-    let total = calculate(operator, firstOperand, secondOperand);
-    firstOperand = total;
-    secondOperand = '';
-    operator = '';
-    prevScreenData.textContent = screenData.textContent;
-    screenData.textContent = '';
-    screenData.textContent += total;
+    evaluate();
 });
 
-// todo: fix adding multiple decimals to each operand //
 decimalButton.addEventListener('click', () => {
+    if (onFirstOperand && firstOperand.includes('.')) {
+        return;
+    };
+    if (onFirstOperand === false && secondOperand.includes('.')) {
+        return;
+    };
     appendNumber(decimalButton.textContent, onFirstOperand);
     screenData.textContent += decimalButton.textContent;
 });
@@ -123,6 +126,18 @@ clearButton.addEventListener('click', () => {
 });
 
 deleteButton.addEventListener('click', () => {
-    // code here //
+    if (onFirstOperand) {
+        let newFirstOperand = firstOperand.split('');
+        newFirstOperand.pop();
+        firstOperand = newFirstOperand.join('');
+        screenData.textContent = firstOperand;
+    };
+
+    if (onFirstOperand === false) {
+        let newFirstOperand = secondOperand.split('');
+        newFirstOperand.pop();
+        secondOperand = newFirstOperand.join('');
+        screenData.textContent = secondOperand;
+    };
 });
 
