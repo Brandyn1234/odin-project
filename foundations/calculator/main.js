@@ -10,6 +10,7 @@ const operationButtons = document.querySelectorAll('.operations');
 const equalsButton = document.querySelector('.equals');
 const decimalButton = document.querySelector('.decimal');
 const clearButton = document.querySelector('.clear');
+const deleteButton = document.querySelector('.delete');
 
 function appendNumber(number, onFirstOperand) {
     if (onFirstOperand) {
@@ -108,8 +109,10 @@ equalsButton.addEventListener('click', () => {
     screenData.textContent += total;
 });
 
+// todo: fix adding multiple decimals to each operand //
 decimalButton.addEventListener('click', () => {
-    // code here //
+    appendNumber(decimalButton.textContent, onFirstOperand);
+    screenData.textContent += decimalButton.textContent;
 });
 
 
@@ -119,7 +122,7 @@ clearButton.addEventListener('click', () => {
     console.log(secondOperand);
 });
 
-
-// Why does multiplication and divison not work? //
-// multiplication is setting total to 0 somehow //
+deleteButton.addEventListener('click', () => {
+    // code here //
+});
 
