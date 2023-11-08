@@ -74,7 +74,7 @@ numberButtons.forEach(button => {
     button.addEventListener('click', () => {
 
         if (screenData.innerText === '0') {
-            screenData.textContent = '';
+            screenData.innerText = '';
         };
 
         appendNumber(button.textContent, onFirstOperand);
