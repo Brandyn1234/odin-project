@@ -133,11 +133,13 @@ deleteButton.addEventListener('click', () => {
         screenData.textContent = firstOperand;
     };
 
-    if (onFirstOperand === false) {
+    if (onFirstOperand === false && secondOperand > 0) {
         let newFirstOperand = secondOperand.split('');
         newFirstOperand.pop();
         secondOperand = newFirstOperand.join('');
-        screenData.textContent = secondOperand;
+        let newScreenData = screenData.textContent.split('');
+        newScreenData.pop();
+        screenData.textContent = newScreenData.join('');
     };
 });
 
