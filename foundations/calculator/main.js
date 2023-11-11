@@ -139,8 +139,6 @@ decimalButton.addEventListener('click', () => {
 
 clearButton.addEventListener('click', () => {
     allClear();
-    //console.log(firstOperand);//
-    //console.log(secondOperand);//
 });
 
 deleteButton.addEventListener('click', () => {
