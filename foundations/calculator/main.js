@@ -51,7 +51,7 @@ function divide(a, b){
 
 function evaluate() {
     let total = calculate(operator, firstOperand, secondOperand);
-    total = total.toString();
+    total = total.toPrecision(4);
     firstOperand = total;
     secondOperand = '';
     operator = '';
@@ -91,8 +91,6 @@ numberButtons.forEach(button => {
 
         appendNumber(button.textContent, onFirstOperand);
         screenData.textContent += button.textContent;
-        //console.log(firstOperand);//
-        //console.log(secondOperand);//
     });
 });
 
@@ -116,6 +114,8 @@ operationButtons.forEach(button => {
             operator = '/';
         };
         screenData.textContent += button.textContent;
+        prevScreenData.textContent = screenData.textContent;
+        screenData.textContent = '';
     });
 });
 
