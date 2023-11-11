@@ -42,16 +42,24 @@ function multiply(a, b){
 };
 
 function divide(a, b){
+    if (secondOperand === '0') {
+        screenData.textContent = 'Cannot divide by zero';
+        return;
+    };
     return a / b;
 };
 
 function evaluate() {
     let total = calculate(operator, firstOperand, secondOperand);
+    total = total.toString();
     firstOperand = total;
     secondOperand = '';
     operator = '';
     prevScreenData.textContent = screenData.textContent;
     screenData.textContent = '';
+    if (total.length > 15) {
+        total = total.slice(0, 16);
+    };
     screenData.textContent += total;
 };
 
@@ -73,14 +81,18 @@ function calculate(operator, a, b){
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
 
+        if (firstOperand.length >= 15 || secondOperand.length >= 15) {
+            return;
+        };
+
         if (screenData.innerText === '0') {
             screenData.textContent = '';
         };
 
         appendNumber(button.textContent, onFirstOperand);
         screenData.textContent += button.textContent;
-        console.log(firstOperand);
-        console.log(secondOperand);
+        //console.log(firstOperand);//
+        //console.log(secondOperand);//
     });
 });
 
@@ -88,6 +100,10 @@ operationButtons.forEach(button => {
     button.addEventListener('click', () => {
 
         if (operator.length >= 1) {
+            return;
+        };
+
+        if (operator.length >= 1 && secondOperand.length >= 1) {
             evaluate();
         };
 
@@ -104,7 +120,9 @@ operationButtons.forEach(button => {
 });
 
 equalsButton.addEventListener('click', () => {
-    evaluate();
+    if (operator.length >= 1 && secondOperand.length >= 1) {
+        evaluate();
+    };
 });
 
 decimalButton.addEventListener('click', () => {
@@ -121,8 +139,8 @@ decimalButton.addEventListener('click', () => {
 
 clearButton.addEventListener('click', () => {
     allClear();
-    console.log(firstOperand);
-    console.log(secondOperand);
+    //console.log(firstOperand);//
+    //console.log(secondOperand);//
 });
 
 deleteButton.addEventListener('click', () => {
@@ -142,4 +160,6 @@ deleteButton.addEventListener('click', () => {
         screenData.textContent = newScreenData.join('');
     };
 });
+
+
 
