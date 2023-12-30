@@ -12,9 +12,6 @@ const decimalButton = document.querySelector('.decimal');
 const clearButton = document.querySelector('.clear');
 const deleteButton = document.querySelector('.delete');
 
-// disable zooming on ios mobile // 
-document.addEventListener('touchmove', event => event.scale !== 1 && event.preventDefault(), { passive: false });
-
 function appendNumber(number, onFirstOperand) {
     if (onFirstOperand) {
         firstOperand += number;
