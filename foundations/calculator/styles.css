@@ -93,12 +93,4 @@ button:hover {
         max-width: 255px;
         border: 2px solid black;
     }
-
-    button {
-        width: 100px;
-    }
-
-    .span-two {
-        width: 100px;
-    }
 }
