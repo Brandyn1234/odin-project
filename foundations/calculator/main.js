@@ -16,8 +16,8 @@ function appendNumber(number, onFirstOperand) {
     if (onFirstOperand) {
         firstOperand += number;
     } else {
-        secondOperand += number
-    }
+        secondOperand += number;
+    };
 };
 
 function allClear() {
@@ -51,15 +51,11 @@ function divide(a, b){
 
 function evaluate() {
     let total = calculate(operator, firstOperand, secondOperand);
-    total = total.toPrecision(4);
     firstOperand = total;
     secondOperand = '';
     operator = '';
     prevScreenData.textContent = screenData.textContent;
     screenData.textContent = '';
-    if (total.length > 15) {
-        total = total.slice(0, 16);
-    };
     screenData.textContent += total;
 };
 
@@ -80,10 +76,6 @@ function calculate(operator, a, b){
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-
-        if (firstOperand.length >= 15 || secondOperand.length >= 15) {
-            return;
-        };
 
         if (screenData.innerText === '0') {
             screenData.textContent = '';
@@ -109,6 +101,7 @@ operationButtons.forEach(button => {
             onFirstOperand = false;
         };
 
+
         operator = button.textContent;
         if (button.textContent == '÷') {
             operator = '/';
@@ -129,7 +122,7 @@ decimalButton.addEventListener('click', () => {
     if (onFirstOperand && firstOperand.includes('.')) {
         return;
     };
-    if (onFirstOperand === false && secondOperand.includes('.')) {
+    if (onFirstOperand == false && secondOperand.includes('.')) {
         return;
     };
     appendNumber(decimalButton.textContent, onFirstOperand);
@@ -149,7 +142,7 @@ deleteButton.addEventListener('click', () => {
         screenData.textContent = firstOperand;
     };
 
-    if (onFirstOperand === false && secondOperand > 0) {
+    if (onFirstOperand == false && secondOperand > 0) {
         let newFirstOperand = secondOperand.split('');
         newFirstOperand.pop();
         secondOperand = newFirstOperand.join('');
@@ -158,6 +151,3 @@ deleteButton.addEventListener('click', () => {
         screenData.textContent = newScreenData.join('');
     };
 });
-
-
-
