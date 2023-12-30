@@ -96,16 +96,16 @@ operationButtons.forEach(button => {
         if (operator.length >= 1 && secondOperand.length >= 1) {
             evaluate();
         };
-
+        
         if (onFirstOperand) {
             onFirstOperand = false;
         };
-
 
         operator = button.textContent;
         if (button.textContent == '÷') {
             operator = '/';
         };
+
         screenData.textContent += button.textContent;
         prevScreenData.textContent = screenData.textContent;
         screenData.textContent = '';
