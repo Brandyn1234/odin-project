@@ -90,7 +90,9 @@ button:hover {
 
     .button-grid {
         max-width: 255px;
-        color: #000000;
+    }
 
+    button {
+        color: #000000;
     }
 }
