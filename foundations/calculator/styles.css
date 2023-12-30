@@ -89,6 +89,8 @@ button:hover {
     }
 
     .button-grid {
-        width: 255px;
+        max-width: 255px;
+        color: #000000;
+
     }
 }
