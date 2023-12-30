@@ -91,6 +91,14 @@ button:hover {
 
     .button-grid {
         max-width: 255px;
-        border: 2px solid black;
+        gap: 3px;
     }
-}
+
+    button {
+        width: 62px;
+    }
+
+    .span-two {
+        width: 125px
+    }
+} 
