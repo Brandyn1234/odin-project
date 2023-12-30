@@ -89,6 +89,7 @@ button:hover {
     }
 
     .button-grid {
-        width: 230px;
+        width: 255px;
+        gap: 9px;
     }
 }
