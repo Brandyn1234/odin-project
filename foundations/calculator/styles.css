@@ -101,6 +101,7 @@ button:hover {
         width: 53px;
         border: 1px solid #000000;
         text-align: center !important;
+        font-size: 14px;
     }
 
     .span-two {
