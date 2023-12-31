@@ -52,7 +52,7 @@ body {
 
 .button-grid {
     display: grid;
-    text-align: center;
+    text-align: center !important;
     grid-template-columns: repeat(4, 1fr);
     width: 360px;
     height: 365px;
@@ -83,26 +83,26 @@ button:hover {
 
 @media screen and (max-width: 480px) {
     .calc-bg {
-        width: 240px;/*300px;*/
+        width: 240px;
     }
     
     .screen-display {
-        width: 217px;/*255px;*/
+        width: 217px;
         margin-left: 10px;
     }
 
     .button-grid {
-        max-width: 204px;/*255px;*/
+        max-width: 204px;
         margin-left: 10px;
         gap: 3px;
     }
 
     button {
-        width: 53px;/*62.5px;*/
+        width: 53px;
         border: 1px solid #000000;
     }
 
     .span-two {
-        width: 108px;/*125px;*/
+        width: 108px;
     }
 } 
