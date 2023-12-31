@@ -53,9 +53,9 @@ body {
 .button-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 360px;
+    width: 365px;
     height: 365px;
-    margin-left: 20px;
+    margin-left: 18px;
     margin-top: 20px;
     gap: 12px;
 }
