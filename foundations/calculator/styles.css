@@ -78,27 +78,29 @@ button:hover {
 }
 
 
-/* media queries */
+/* mobile breakpoint */
 
 @media screen and (max-width: 480px) {
     .calc-bg {
-        width: 300px;
+        width: 240px;/*300px;*/
     }
     
     .screen-display {
-        width: 255px;
+        width: 200px;/*255px;*/
     }
 
     .button-grid {
-        max-width: 255px;
+        max-width: 204px;/*255px;*/
+        margin-left: 12px;
         gap: 3px;
     }
 
     button {
-        width: 62.5px;
+        width: 53px;/*62.5px;*/
+        border: 1px solid #000000;
     }
 
     .span-two {
-        width: 125px
+        width: 106.25px;/*125px;*/
     }
 } 
