@@ -52,7 +52,6 @@ body {
 
 .button-grid {
     display: grid;
-    text-align: center !important;
     grid-template-columns: repeat(4, 1fr);
     width: 360px;
     height: 365px;
@@ -89,6 +88,7 @@ button:hover {
     .screen-display {
         width: 217px;
         margin-left: 10px;
+        border: 1px solid #000000;
     }
 
     .button-grid {
@@ -100,6 +100,7 @@ button:hover {
     button {
         width: 53px;
         border: 1px solid #000000;
+        text-align: center !important;
     }
 
     .span-two {
