@@ -88,12 +88,8 @@ numberButtons.forEach(button => {
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
 
-        if (operator === '1') {
-            return;
-        }
-
-        if (operator.length >= 1) {
-            return;
+        if (operator.length >= 1 && secondOperand.length >= 1) {
+            evaluate();
         };
 
         if (onFirstOperand) {
@@ -112,6 +108,7 @@ operationButtons.forEach(button => {
 });
 
 equalsButton.addEventListener('click', () => {
+
     if (operator.length >= 1 && secondOperand.length >= 1) {
         evaluate();
     };
