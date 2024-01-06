@@ -2,6 +2,8 @@ let firstOperand = '';
 let secondOperand = '';
 let onFirstOperand = true;
 let operator = '';
+let ans = '';
+let onEquals = false;
 
 const screenData = document.getElementById('screen-data');
 const prevScreenData = document.getElementById('prev-screen-data');
@@ -20,15 +22,25 @@ function appendNumber(number, onFirstOperand) {
     };
 };
 
-function allClear() {
+function allClear(){
     onFirstOperand = true;
     firstOperand = '';
     secondOperand = '';
     operator = '';
     screenData.textContent = 0;
     prevScreenData.textContent = '';
+    ans = '';
 };
-   
+
+function clearScreen(){
+    screenData.textContent = 0;
+    prevScreenData.textContent = '';
+    ans = '';
+    onFirstOperand = true;
+    onEquals = false;
+    firstOperand = '';
+};
+
 function add(a, b){
     return a + b;
 };
@@ -49,16 +61,11 @@ function divide(a, b){
     return a / b;
 };
 
-function evaluate() {
-    let total = calculate(operator, firstOperand, secondOperand);
-    firstOperand = total;
-    secondOperand = '';
-    operator = '';
-    screenData.textContent = '';
-    screenData.textContent += total;
-};
-
 function calculate(operator, a, b){
+    if (operator == '÷') {
+        operator = '/';
+    };
+
     a = Number(a);
     b = Number(b);
     switch (operator){
@@ -75,6 +82,10 @@ function calculate(operator, a, b){
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+        if (ans && onEquals && !(operator)){
+            clearScreen();
+        };
+
 
         if (screenData.innerText === '0') {
             screenData.textContent = '';
@@ -89,29 +100,51 @@ operationButtons.forEach(button => {
     button.addEventListener('click', () => {
 
         if (operator.length >= 1 && secondOperand.length >= 1) {
-            evaluate();
+            ans = calculate(operator, firstOperand, secondOperand);
+            firstOperand = ans;
+            secondOperand = '';
+            operator = '';
+            screenData.textContent = '';
+            screenData.textContent += ans;
         };
 
         if (onFirstOperand) {
             onFirstOperand = false;
         };
 
-        operator = button.textContent;
-        if (button.textContent == '÷') {
-            operator = '/';
-        };
-
-        screenData.textContent += button.textContent;
-        prevScreenData.textContent = screenData.textContent;
-        screenData.textContent = '';
+        if (operator.length >= 1){
+            operator = '';
+            operator += button.textContent;
+            ans = prevScreenData.textContent.split('');;
+            ans.pop();
+            ans = ans.join('');
+            prevScreenData.textContent = '';
+            prevScreenData.textContent += ans;
+            prevScreenData.textContent += operator;
+        }else{
+            operator = '';
+            operator += button.textContent;
+            prevScreenData.textContent = '';
+            prevScreenData.textContent += screenData.textContent;
+            prevScreenData.textContent += operator;
+            screenData.textContent = '';  
+        }; 
     });
 });
 
 equalsButton.addEventListener('click', () => {
-
-    if (operator.length >= 1 && secondOperand.length >= 1) {
-        evaluate();
+    if (!operator || !secondOperand){
+        return;
     };
+
+    prevScreenData.textContent += secondOperand;
+    prevScreenData.textContent += ' = ';
+    ans = calculate(operator, firstOperand, secondOperand);
+    screenData.textContent = '' + ans;
+    firstOperand = ans;
+    operator = '';
+    secondOperand = '';
+    onEquals = true;
 });
 
 decimalButton.addEventListener('click', () => {
@@ -138,7 +171,7 @@ deleteButton.addEventListener('click', () => {
         screenData.textContent = firstOperand;
     };
 
-    if (onFirstOperand == false && secondOperand > 0) {
+    if (onFirstOperand == false && secondOperand >= 1) {
         let newFirstOperand = secondOperand.split('');
         newFirstOperand.pop();
         secondOperand = newFirstOperand.join('');
