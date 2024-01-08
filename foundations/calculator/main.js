@@ -54,10 +54,6 @@ function multiply(a, b){
 };
 
 function divide(a, b){
-    if (secondOperand === '0') {
-        screenData.textContent = 'Cannot divide by zero';
-        return;
-    };
     return a / b;
 };
 
@@ -82,6 +78,11 @@ function calculate(operator, a, b){
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+        
+        if (screenData.textContent === 'Cannot divide by zero'){
+            allClear();
+        };
+
         if (ans && onEquals && !(operator)){
             clearScreen();
         };
@@ -98,6 +99,11 @@ numberButtons.forEach(button => {
 
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
+        if (secondOperand === '0' && operator === '÷') {
+            allClear();
+            screenData.textContent = 'Cannot divide by zero';
+            return;
+        };
 
         if (operator.length >= 1 && secondOperand.length >= 1) {
             ans = calculate(operator, firstOperand, secondOperand);
@@ -134,6 +140,12 @@ operationButtons.forEach(button => {
 
 equalsButton.addEventListener('click', () => {
     if (!operator || !secondOperand){
+        return;
+    };
+
+    if (secondOperand === '0' && operator === '÷') {
+        allClear();
+        screenData.textContent = 'Cannot divide by zero';
         return;
     };
 

@@ -91,6 +91,14 @@ button:hover {
         border: 1px solid #000000;
     }
 
+    #screen-data {
+        font-size: 20px;
+    }
+
+    #prev-screen-data {
+       font-size: 12px;
+    }
+
     .button-grid {
         max-width: 204px;
         margin-left: 10px;
